@@ -32,7 +32,7 @@ public class InvoiceGeneratorTest {
 	}
 
 	@Test
-	public void givenMultipleRides_ShouldReturnInvoiceSummary(int NumOfRides, double totalFare) {
+	public void givenMultipleRides_ShouldReturnInvoiceSummary() {
 
 		Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
 		InvoiceSummary summary = invoiceGenerator.calculateFare(rides);
