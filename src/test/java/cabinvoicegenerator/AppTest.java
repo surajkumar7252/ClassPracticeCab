@@ -1,20 +1,23 @@
 package cabinvoicegenerator;
 
-import static org.junit.Assert.assertTrue;
+
 
 import org.junit.Test;
+import org.junit.Assert;
 
-/**
- * Unit test for simple App.
- */
+
+
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+    
     @Test
-    public void shouldAnswerWithTrue()
+    public void givenDistanceAndTime_ShouldReturnTotalFare()
     {
-        assertTrue( true );
+      InvoiceGenerator invoiceGenerator =new InvoiceGenerator(); 
+    	  double distance=2.0;
+    	  int time=5;
+    	  double fare=invoiceGenerator.calculateFare(distance,time);
+     
+          Assert.assertEquals(25, fare,0.0);   
     }
 }
