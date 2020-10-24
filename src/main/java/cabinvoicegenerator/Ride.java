@@ -1,8 +1,11 @@
 package cabinvoicegenerator;
 
 public class Ride {
-	public Ride(double x,int y) {
-		
-	}
+	public double distance;
+	public int time;
 
+	public Ride(double distance, int time) {
+		this.distance = distance;
+		this.time = time;
+	}
 }
