@@ -2,8 +2,15 @@ package cabinvoicegenerator;
 
 import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Before;
 
 public class InvoiceGeneratorTest {
+	InvoiceGenerator invoiceGenerator = null;
+
+	@Before
+	public void setUp() throws Exception {
+		invoiceGenerator = new InvoiceGenerator();
+	}
 
 	@Test
 	public void givenDistanceAndTime_ShouldReturnTotalFare() {
@@ -25,11 +32,12 @@ public class InvoiceGeneratorTest {
 	}
 
 	@Test
-	public void givenMultipleRides_ShouldReturnTotalFare() {
-		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+	public void givenMultipleRides_ShouldReturnInvoiceSummary(int NumOfRides, double totalFare) {
+
 		Ride[] rides = { new Ride(2.0, 5), new Ride(0.1, 1) };
-		double fare = invoiceGenerator.calculateFare(rides);
-		Assert.assertEquals(30, fare, 0.0);
+		InvoiceSummary summary = invoiceGenerator.calculateFare(rides);
+		InvoiceSummary expectedSummary = new InvoiceSummary(2, 30.0);
+		Assert.assertEquals(expectedSummary, summary);
 
 	}
 
