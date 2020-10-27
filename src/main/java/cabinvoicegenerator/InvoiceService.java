@@ -1,6 +1,6 @@
 package cabinvoicegenerator;
 
-public class InvoiceGenerator {
+public class InvoiceService {
 	private static final int COST_PER_TIME = 1;
 	private static final double MINIMUM_COST_PER_KILOMETER = 10;
 	private static final double MINIMUM_FARE = 5;
@@ -26,6 +26,15 @@ public class InvoiceGenerator {
 		}
 		return new InvoiceSummary(rides.length,totalFare);
 
+	}
+
+	public void addRides(String userId, Ride[] rides) {
+		
+	}
+
+	public InvoiceSummary getInvoiceSummary(String userId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
