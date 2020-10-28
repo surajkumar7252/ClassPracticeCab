@@ -11,6 +11,7 @@ public class InvoiceService {
 	public InvoiceSummary calculateFare(Ride[] rides) {
 		double totalFare = 0;
 		for (Ride ride : rides) {
+			
 
 		}
 		return new InvoiceSummary(rides.length, totalFare);
